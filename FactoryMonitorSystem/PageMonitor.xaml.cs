@@ -1,5 +1,4 @@
-﻿using CommunityToolkit.Mvvm.DependencyInjection;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,19 +16,13 @@ using System.Windows.Shapes;
 namespace FactoryMonitorSystem
 {
     /// <summary>
-    /// MainWindow.xaml 的互動邏輯
+    /// PageMonitor.xaml 的互動邏輯
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PageMonitor : UserControl
     {
-        //public MainWindow(MainVM mainVM)
-        public MainWindow()
+        public PageMonitor()
         {
             InitializeComponent();
-
-            //if (mainVM == Ioc.Default.GetService<MainVM>())
-
-            //DataContext = mainVM;
-            DataContext = Ioc.Default.GetService<MainVM>();
         }
     }
 }

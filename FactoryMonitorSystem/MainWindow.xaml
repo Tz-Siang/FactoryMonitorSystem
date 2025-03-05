@@ -3,10 +3,63 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mt="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:FactoryMonitorSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1080" Width="1920"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Border Width="300" CornerRadius="10">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFDDEDFF"/>
+                        <GradientStop Color="#FF7CC0FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Flin" FontSize="80" Margin="20 0 0 0"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" FontWeight="Bold" FontFamily="Brush Script MT">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Blue" Offset="1"/>
+                                <GradientStop Color="Red"/>
+                                <GradientStop Color="Lime" Offset="0.5"/>
+                                <GradientStop Color="Yellow" Offset="0.25"/>
+                                <GradientStop Color="Cyan" Offset="0.75"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                        <TextBlock.Effect>
+                            <DropShadowEffect/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+            <Grid Width="90" Height="90" Margin="20 0 0 0">
+                <Grid.Effect>
+                    <DropShadowEffect />
+                </Grid.Effect>
+                <mt:PackIcon Kind="Factory" Width="50" Height="70" Foreground="SeaGreen" HorizontalAlignment="Center" VerticalAlignment="Top">
+                </mt:PackIcon>
+                <mt:PackIcon Kind="Monitor" Width="90" Height="90" Foreground="LightSeaGreen" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    
+                </mt:PackIcon>
+            </Grid>
+            <TextBlock Text="Factory Monitor System" Margin="20 0 0 0"
+                       FontSize="60" VerticalAlignment="Center" FontFamily="Arial Black" Foreground="DarkSeaGreen">
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </StackPanel>
+        <Border Grid.Row="1" Background="Green"/>
+        <Border Grid.Row="2" Background="LightCyan">
+            <ContentControl Content="{Binding ActivePage}"/>
+        </Border>
     </Grid>
 </Window>
